@@ -1,0 +1,22 @@
+.bg-beepbox {
+  background-color: #7746ff;
+  color: #ffffff;
+}
+
+.btn-beepbox {
+  background-color: #7746ff;
+  color: #ffffff;
+}
+
+.border-beepbox {
+  color: #7746ff;
+}
+
+.text-beepbox {
+  color: #7746ff;
+}
+
+.dropdown-scroll {
+            max-height: 200px;  /* atur sesuai kebutuhan */
+            overflow-y: auto;   /* supaya scroll muncul */
+        }

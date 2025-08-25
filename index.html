@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume Booster</title>
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Icon BBVCX.png">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      max-width: 600px;
+      margin: 50px auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .audio-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .slider {
+      width: 80%;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body class="bg-dark">
+
+<div class="container">
+  <div class="card p-3 bg-beepbox">
+    <div class="card-body text-center">
+      <h4 class="card-title">BeepBox Fake Vocodex</h4>
+      <h5 class="card-title">with volume booster</h5>
+      
+    <!-- Bagian Atas -->
+    <div class="d-flex justify-content-between">
+      <!-- Dropdown Kiri -->
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Carrier Tones
+        </button>
+        <ul class="dropdown-menu dropdown-scroll">
+            <li><a class="dropdown-item" href="https://www.beepbox.co/#9n31sbk0l00e03t0Oa7g0fj07r1i0o432T0v0u00f0q21c0d34w5h0E0T1v1ue0f0q023d08A1F4B3Q217cPe433E361a6287bT1v1u19f0q802d23A5F4B0Q0202PeebbE0T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1aFLh-800000"
+            target="_blank">Saw</a></li>
+            <li><a class="dropdown-item" href="https://www.beepbox.co/#9n31sbk0l00e03t0Oa7g0fj07r1i0o432T0v0u00f0q21c0d34w2h0E0T1v1ue0f0q023d08A1F4B3Q217cPe433E361a6287bT1v1u19f0q802d23A5F4B0Q0202PeebbE0T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1aFLh-800000"
+            target="_blank">Pulse</a></li>
+            <li><a class="dropdown-item" href="https://www.beepbox.co/#9n31sbk0l00e03t0Oa7g0fj07r1i0o432T8v0u08f0q21c0d34x660W0E0T1v1ue0f0q023d08A1F4B3Q217cPe433E361a6287bT1v1u19f0q802d23A5F4B0Q0202PeebbE0T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1aFLh-800000"
+            target="_blank">Flanged Saw</a></li>
+            <li><a class="dropdown-item" href="https://www.beepbox.co/#9n31sbk0l00e03t0Oa7g0fj07r1i0o432T8v0u08f0q21c0d34x666W7E0T1v1ue0f0q023d08A1F4B3Q217cPe433E361a6287bT1v1u19f0q802d23A5F4B0Q0202PeebbE0T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1aFLh-800000"
+            target="_blank">Flanged Pulse</a></li>
+            <li><a class="dropdown-item" href="https://www.beepbox.co/#9n31sbk0l00e03t0Oa7g0fj07r1i0o432T1v0u01f0q21c0d34AcF8B5Q0259P8998E0T1v1ue0f0q023d08A1F4B3Q217cPe433E361a6287bT1v1u19f0q802d23A5F4B0Q0202PeebbE0T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1aFLh-800000"
+            target="_blank">Organ</a></li>
+            <li><a class="dropdown-item" href="https://www.beepbox.co/#9n31sbk0l00e03t0Oa7g0fj07r1i0o432T1v0u01f0q21c0d34A3FfB0Q0000PffffE0T1v1ue0f0q023d08A1F4B3Q217cPe433E361a6287bT1v1u19f0q802d23A5F4B0Q0202PeebbE0T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1aFLh-800000"
+            target="_blank">Bright</a></li>
+            <li><a class="dropdown-item" href="https://www.beepbox.co/#9n31sbk0l00e03t0Oa7g0fj07r1i0o432T0v0u00f0q00d03w5h7E0T1v1ue0f0q023d08A1F4B3Q217cPe433E361a6287bT1v1u19f0q802d23A5F4B0Q0202PeebbE0T2v1u15f10w4qw02d03w0E0b4h400000000h4g000000014h000000004h400000000p1aFLh-800000"
+            target="_blank">PWM</a></li>
+        </ul>
+      </div>
+      <!-- Dropdown Kanan -->
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Vocodex
+        </button>
+        <ul class="dropdown-menu dropdown-scroll">
+         <!-- 1 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.85&BPwidth=0&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+       target="_blank" class="btn btn-light w-100">Default</a></li>
+         <!-- 2 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0.05&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+      target="_blank" class="btn btn-light w-100">Default (BW Max ver.)</a></li>
+         <!-- 3 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0&Volboost=1&DBperOct=2&Alt_BP=1&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+      target="_blank" class="btn btn-light w-100">Normal</a></li>
+         <!-- 4 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0&Volboost=1&DBperOct=2&Alt_BP=3&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+      target="_blank" class="btn btn-light w-100">Fast</a></li>
+         <!-- 5 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.92&BPwidth=0.25&Volboost=7.5&DBperOct=2&Alt_BP=4&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+      target="_blank" class="btn btn-light w-100">3FLT</a></li>
+         <!-- 6 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=1&Volboost=2.5&DBperOct=2&Alt_BP=4&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+      target="_blank" class="btn btn-light w-100">3FLT (BW Max ver.)</a></li>
+         <!-- 7 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0&Volboost=0.5&DBperOct=2&Alt_BP=5&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+      target="_blank" class="btn btn-light w-100">ApLp</a></li>
+         <!-- 8 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=8&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=43&Resonance=0.332&BPwidth=1&Volboost=1&DBperOct=6&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+      target="_blank" class="btn btn-light w-100">AnalogVocoding</a></li>
+         <!-- 9 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.13&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=8&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.659&BPwidth=0&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1"
+      target="_blank" class="btn btn-light w-100">MIESLE179's Analog Vocodex Settings</a></li>
+         <!-- 10 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.85&BPwidth=0&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Chorded</a></li>
+         <!-- 11 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.85&BPwidth=0&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Clearer</a></li>
+         <!-- 12 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=-2&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.8&BPwidth=0.1&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Group</a></li>
+         <!-- 13 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=5&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.85&BPwidth=0&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Helium</a></li>
+         <!-- 14 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=-5&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.85&BPwidth=0&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">More Analog Testosterone</a></li>
+         <!-- 15 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0.05&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Chorded BW-Max ver.</a></li>
+         <!-- 16 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0.05&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Clearer BW-Max ver.</a></li>
+         <!-- 17 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=-2&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0.05&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Group BW-Max ver.</a></li>
+         <!-- 18 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=5&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0.05&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">Analog Helium BW-Max ver.</a></li>
+         <!-- 19 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0.2&pitch=-5&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.65&BPwidth=0.05&Volboost=10&DBperOct=2&Alt_BP=0&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">More Analog Testosterone BW-Max ver.</a></li>
+         <!-- 20 --> <li><a href="https://d3nschot.github.io/crappy-FFT-vocoder/?decayType=1&release=0&pitch=0&BandShift=0&FreqFlip=false&BandBreak=false&BR_voc_Type=0&BR_out=1&volume=1&clamp_output=0&threshold=1&divbands=1&FFTsize=10&BassBoost=0&BassCurve=0&EQType=0&steps=0&RoundType=0&SoundGoodizer=0&simpleChorus=0&speedType=0&userSpeed=1&AutoUpdateFilters=true&TotalBands=40&Resonance=0.92&BPwidth=1&Volboost=1&DBperOct=8&Alt_BP=4&Ag=0.125&Resonance4orm=0.999&4ormFilterType=0&UseArrLength=false&MaxHarm=16&4ormVolume=1&use_gen=false&gen_type=0&PWMwidth=0.5&resonance2=0.99&Harmonics=base64%7EW10uZmxhdE1hcCgoaSk9PnsKICAgIGY9MioqKChpKzMpLzEyKSpNYXRoLlBJLzEyOC9IWioyMDQ4KjQ0MDsKICAgIHJldHVybiBbXS5tYXAoYT0%2BYSpmKTsKfSk%3D&iterations=1&Vmode=1" 
+	target="_blank" class="btn btn-light w-100">DX3050's Analog Vocodex Settings</a></li>
+        </ul>
+      </div>
+    </div><br>
+
+    <!-- Bagian Tengah -->
+
+      <div class="audio-controls">
+        <input type="file" id="audioFile" class="form-control mb-3" accept="audio/*">
+        <audio id="audioPlayer" controls class="mb-3 w-100"></audio>
+
+        <label for="volumeRange" class="form-label">Volume: <span id="volumeValue">100%</span></label>
+        <input type="range" class="form-range slider" min="100" max="1000" value="100" step="10" id="volumeRange">
+        
+        <button id="downloadBtn" class="btn btn-light mt-3">Download Audio Boosted</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script Volume Booster -->
+<script>
+  const audioFile = document.getElementById('audioFile');
+  const audioPlayer = document.getElementById('audioPlayer');
+  const volumeRange = document.getElementById('volumeRange');
+  const volumeValue = document.getElementById('volumeValue');
+  const downloadBtn = document.getElementById('downloadBtn');
+
+  let audioContext, source, gainNode, recordedChunks = [];
+
+  audioFile.addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      audioPlayer.src = url;
+
+      // Setup AudioContext untuk Volume Boost
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      source = audioContext.createMediaElementSource(audioPlayer);
+      gainNode = audioContext.createGain();
+      source.connect(gainNode).connect(audioContext.destination);
+    }
+  });
+
+  volumeRange.addEventListener('input', function() {
+    let volumeBoost = this.value / 100; // misal 1000 -> 10x lebih keras
+    if (gainNode) gainNode.gain.value = volumeBoost;
+    volumeValue.textContent = this.value + "%";
+  });
+
+  // Simulasi Download (tidak langsung export audio boosted, hanya contoh)
+  downloadBtn.addEventListener('click', () => {
+    alert("Fitur download hasil boost masih simulasi. Implementasi perlu Audio Worklet / WebAssembly untuk render ulang audio.");
+  });
+</script>
+</body>
+</html>
