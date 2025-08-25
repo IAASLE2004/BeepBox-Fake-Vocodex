@@ -1,48 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volume Booster</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BeepBox Fake Vocodex</title>
   <!-- Bootstrap 5.3 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="Icon BBVCX.png">
   <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .card {
-      max-width: 600px;
-      margin: 50px auto;
-      border-radius: 1rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .audio-controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-    .slider {
-      width: 80%;
-      margin-top: 15px;
-    }
+    body { background-color: #0b0f13; }
+    .app-card { border-radius: 1rem; overflow: hidden; }
+    .meter { height: 12px; }
+    .progress { background-color: rgba(255,255,255,.15); }
+    .form-range::-webkit-slider-thumb { background: #dc3545; } /* danger */
+    .form-range::-moz-range-thumb { background: #dc3545; }
+    .kbd { padding:.15rem .4rem; border:1px solid rgba(255,255,255,.25); border-bottom-width:2px; border-radius:.35rem; }
   </style>
 </head>
-<body class="bg-dark">
+<body class="bg-dark text-light">
+  <!-- NAVBAR -->
+  
 
-<div class="container">
-  <div class="card p-3 bg-beepbox">
-    <div class="card-body text-center">
-      <h4 class="card-title">BeepBox Fake Vocodex</h4>
-      <h5 class="card-title">with volume booster</h5>
-      
-    <!-- Bagian Atas -->
-    <div class="d-flex justify-content-between">
+  <main class="container my-4">
+    <div class="card bg-dark text-light app-card shadow border border-danger-subtle">
+      <div class="card-header bg-beepbox bg-gradient text-light">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="mb-0">BeepBox Fake Vocodex</h5>
+          <p class="mb-0">With Volume Booster</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
       <!-- Dropdown Kiri -->
       <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-beepbox dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Carrier Tones
         </button>
         <ul class="dropdown-menu dropdown-scroll">
@@ -64,7 +57,7 @@
       </div>
       <!-- Dropdown Kanan -->
       <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-beepbox dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Vocodex
         </button>
         <ul class="dropdown-menu dropdown-scroll">
@@ -111,58 +104,334 @@
         </ul>
       </div>
     </div><br>
+        <!-- Controls Row -->
+        <div class="row g-3 align-items-center mb-3">
+          <div class="col-12 col-lg-4">
+            <label for="file" class="form-label">Select Audio</label>
+            <input class="form-control form-control" type="file" id="file" accept="audio/*">
+          </div>
+          <div class="col-12 col-lg-8 d-flex gap-2 mt-2 mt-lg-4">
+            <button id="play" class="btn btn-beepbox" disabled>
+              <i class="bi bi-play-fill"></i> Play / Pause
+            </button>
+            <button id="stop" class="btn btn-beepbox" disabled>Stop</button>
+            <button id="download" class="btn btn-beepbox" disabled>Export (wav)</button>
+          </div>
+        </div>
 
-    <!-- Bagian Tengah -->
+        <!-- Gain & Limiter -->
+        <div class="row g-3 align-items-center mb-3">
+          <div class="col-12 col-md-8">
+            <label for="gain" class="form-label">Booster <span class="text-beepbox">(0–1000%)</span> <span id="gainLabel" class="ms-2 badge text-bg-light text-dark">100%</span></label>
+            <input id="gain" type="range" class="form-range" min="0" max="10" step="0.01" value="1">
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="limiter" checked>
+              <label class="form-check-label" for="limiter">Limiter</label>
+            </div>
+          </div>
+        </div>
 
-      <div class="audio-controls">
-        <input type="file" id="audioFile" class="form-control mb-3" accept="audio/*">
-        <audio id="audioPlayer" controls class="mb-3 w-100"></audio>
+        <!-- Status & Meter -->
+        <div class="mb-2 small text-light-50">Status: <span id="status" class="text-light">Idle</span></div>
+        <div class="progress meter mb-3" role="progressbar" aria-label="Peak meter" aria-valuemin="0" aria-valuemax="100">
+          <div id="meterFill" class="progress-bar bg-danger" style="width: 0%"></div>
+        </div>
 
-        <label for="volumeRange" class="form-label">Volume: <span id="volumeValue">100%</span></label>
-        <input type="range" class="form-range slider" min="100" max="1000" value="100" step="10" id="volumeRange">
-        
-        <button id="downloadBtn" class="btn btn-light mt-3">Download Audio Boosted</button>
+        <!-- (Optional) Native controls for quick preview -->
+        <div class="bg-light text-dark p-2 rounded">
+          <audio id="preview" class="w-100" controls preload="metadata"></audio>
+        </div>
+      </div>
+
+      <div class="card-footer bg-dark text-light-50 small d-flex flex-wrap gap-2">
+        <span>Tips: use limiter if >100%.</span>
+        <span>Shortcut: <span class="kbd">Space</span> play/pause, <span class="kbd">↑/↓</span> gain.</span>
       </div>
     </div>
-  </div>
-</div>
+  </main>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Script Volume Booster -->
-<script>
-  const audioFile = document.getElementById('audioFile');
-  const audioPlayer = document.getElementById('audioPlayer');
-  const volumeRange = document.getElementById('volumeRange');
-  const volumeValue = document.getElementById('volumeValue');
-  const downloadBtn = document.getElementById('downloadBtn');
+  <!-- Bootstrap JS (for potential components; not required for audio logic) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  let audioContext, source, gainNode, recordedChunks = [];
+  <script>
+  (function(){
+    const fileInput = document.getElementById('file');
+    const btnPlay   = document.getElementById('play');
+    const btnStop   = document.getElementById('stop');
+    const btnDl     = document.getElementById('download');
+    const gainSlider= document.getElementById('gain');
+    const gainLabel = document.getElementById('gainLabel');
+    const limiterCb = document.getElementById('limiter');
+    const statusTxt = document.getElementById('status');
+    const meterFill = document.getElementById('meterFill');
+    const previewEl = document.getElementById('preview');
 
-  audioFile.addEventListener('change', function() {
-    const file = this.files[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      audioPlayer.src = url;
+    let ac;               // AudioContext
+    let gainNode;         // GainNode
+    let analyser;         // AnalyserNode
+    let compressor;       // DynamicsCompressorNode (limiter)
+    let src;              // current BufferSource
+    let currentBuffer;    // decoded AudioBuffer
+    let rafId;            // meter raf
 
-      // Setup AudioContext untuk Volume Boost
-      audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      source = audioContext.createMediaElementSource(audioPlayer);
-      gainNode = audioContext.createGain();
-      source.connect(gainNode).connect(audioContext.destination);
+    function ensureAC(){
+      if(!ac){ ac = new (window.AudioContext || window.webkitAudioContext)(); }
+      return ac;
     }
-  });
 
-  volumeRange.addEventListener('input', function() {
-    let volumeBoost = this.value / 100; // misal 1000 -> 10x lebih keras
-    if (gainNode) gainNode.gain.value = volumeBoost;
-    volumeValue.textContent = this.value + "%";
-  });
+    function buildGraph(){
+      const ctx = ensureAC();
+      if(gainNode) gainNode.disconnect();
+      if(analyser) analyser.disconnect();
+      if(compressor) compressor.disconnect();
 
-  // Simulasi Download (tidak langsung export audio boosted, hanya contoh)
-  downloadBtn.addEventListener('click', () => {
-    alert("Fitur download hasil boost masih simulasi. Implementasi perlu Audio Worklet / WebAssembly untuk render ulang audio.");
-  });
-</script>
+      gainNode = ctx.createGain();
+      analyser = ctx.createAnalyser();
+      analyser.fftSize = 512;
+
+      compressor = ctx.createDynamicsCompressor();
+      compressor.threshold.value = -6; // near brickwall
+      compressor.knee.value = 0;
+      compressor.ratio.value = 20;
+      compressor.attack.value = 0.003;
+      compressor.release.value = 0.25;
+
+      connectFlow();
+      updateGain();
+    }
+
+    function connectFlow(){
+      if(!ac) return;
+      try{ gainNode.disconnect(); }catch{}
+      try{ analyser.disconnect(); }catch{}
+      try{ compressor.disconnect(); }catch{}
+
+      if(limiterCb.checked){
+        gainNode.connect(compressor);
+        compressor.connect(analyser);
+        analyser.connect(ac.destination);
+      } else {
+        gainNode.connect(analyser);
+        analyser.connect(ac.destination);
+      }
+    }
+
+    function updateGain(){
+      if(!ac || !gainNode) return;
+      const v = parseFloat(gainSlider.value);
+      gainNode.gain.setTargetAtTime(v, ac.currentTime, 0.01);
+      gainLabel.textContent = (v*100).toFixed(1) + '%';
+    }
+
+    function stopPlayback(){
+      if(src){
+        try{ src.stop(); }catch{}
+        try{ src.disconnect(); }catch{}
+        src = null;
+      }
+      cancelAnimationFrame(rafId);
+    }
+
+    function playBuffer(){
+      if(!currentBuffer) return;
+      const ctx = ensureAC();
+      if(ctx.state === 'suspended') ctx.resume();
+
+      stopPlayback();
+      src = ctx.createBufferSource();
+      src.buffer = currentBuffer;
+      src.connect(gainNode);
+      connectFlow();
+      src.start(0);
+      statusTxt.textContent = 'Play';
+      btnPlay.textContent = 'Pause';
+
+      src.onended = () => {
+        btnPlay.textContent = 'Play';
+        statusTxt.textContent = 'Done';
+        cancelAnimationFrame(rafId);
+      };
+
+      startMeter();
+    }
+
+    function startMeter(){
+      const buf = new Uint8Array(analyser.frequencyBinCount);
+      const loop = () => {
+        analyser.getByteTimeDomainData(buf);
+        let peak = 0;
+        for(let i=0;i<buf.length;i++){
+          const v = Math.abs(buf[i]-128)/128; // 0..1
+          if(v>peak) peak=v;
+        }
+        const pct = Math.min(100, Math.max(0, peak*100));
+        meterFill.style.width = pct.toFixed(1)+'%';
+        rafId = requestAnimationFrame(loop);
+      };
+      cancelAnimationFrame(rafId);
+      loop();
+    }
+
+    async function decodeForOffline(file){
+      const arrayBuf = await file.arrayBuffer();
+      const ctx = ensureAC();
+      return await ctx.decodeAudioData(arrayBuf.slice(0));
+    }
+
+    async function exportBoosted(){
+      if(!currentBuffer) return;
+      const sampleRate = currentBuffer.sampleRate;
+      const length = currentBuffer.length;
+      const ch = currentBuffer.numberOfChannels;
+      const off = new OfflineAudioContext(ch, length, sampleRate);
+
+      const s = off.createBufferSource();
+      s.buffer = currentBuffer;
+      const g = off.createGain();
+      g.gain.value = parseFloat(gainSlider.value);
+
+      if(limiterCb.checked){
+        const c = off.createDynamicsCompressor();
+        c.threshold.value = -6; c.knee.value = 0; c.ratio.value = 20; c.attack.value = 0.003; c.release.value = 0.25;
+        s.connect(g); g.connect(c); c.connect(off.destination);
+      } else {
+        s.connect(g); g.connect(off.destination);
+      }
+      s.start(0);
+      const rendered = await off.startRendering();
+      const blob = encodeWAV(rendered);
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      const base = (fileInput.files?.[0]?.name || 'audio').replace(/\.[^.]+$/, '');
+      a.download = base + '_boosted.wav';
+      a.click();
+    }
+
+    function encodeWAV(audioBuffer){
+      let numCh = audioBuffer.numberOfChannels;
+      const sampleRate = audioBuffer.sampleRate;
+      const samples = audioBuffer.length;
+      const chData = [];
+      for(let ch=0; ch<numCh; ch++) chData.push(audioBuffer.getChannelData(ch));
+
+      let interleaved;
+      if(numCh === 2){
+        interleaved = new Float32Array(samples*2);
+        let idx=0; for(let i=0;i<samples;i++){ interleaved[idx++] = chData[0][i]; interleaved[idx++] = chData[1][i]; }
+      } else if(numCh === 1){
+        interleaved = chData[0];
+      } else {
+        // mixdown first 2 channels
+        const L = chData[0]; const R = chData[1] || chData[0];
+        interleaved = new Float32Array(samples*2);
+        let idx=0; for(let i=0;i<samples;i++){ interleaved[idx++] = L[i]; interleaved[idx++] = R[i]; }
+        numCh = 2;
+      }
+
+      const bytesPerSample = 2; // 16-bit PCM
+      const blockAlign = numCh * bytesPerSample;
+      const byteRate = sampleRate * blockAlign;
+      const dataSize = interleaved.length * bytesPerSample;
+      const buffer = new ArrayBuffer(44 + dataSize);
+      const view = new DataView(buffer);
+
+      writeStr(view, 0, 'RIFF');
+      view.setUint32(4, 36 + dataSize, true);
+      writeStr(view, 8, 'WAVE');
+      writeStr(view, 12, 'fmt ');
+      view.setUint32(16, 16, true);
+      view.setUint16(20, 1, true);
+      view.setUint16(22, numCh, true);
+      view.setUint32(24, sampleRate, true);
+      view.setUint32(28, byteRate, true);
+      view.setUint16(32, blockAlign, true);
+      view.setUint16(34, 16, true);
+      writeStr(view, 36, 'data');
+      view.setUint32(40, dataSize, true);
+
+      floatTo16(view, 44, interleaved);
+      return new Blob([view], {type:'audio/wav'});
+
+      function writeStr(dv, off, str){ for(let i=0;i<str.length;i++) dv.setUint8(off+i, str.charCodeAt(i)); }
+      function floatTo16(dv, off, input){ let pos=off; for(let i=0;i<input.length;i++){ let s=Math.max(-1, Math.min(1, input[i])); dv.setInt16(pos, s<0 ? s*0x8000 : s*0x7FFF, true); pos+=2; } }
+    }
+
+    // EVENTS
+    fileInput.addEventListener('change', async ()=>{
+      const file = fileInput.files?.[0];
+      if(!file) return;
+      ensureAC();
+      buildGraph();
+
+      // Load to preview element (optional native controls)
+      const url = URL.createObjectURL(file);
+      previewEl.src = url; previewEl.load();
+
+      // Decode to buffer for boosted playback/export
+      currentBuffer = await decodeForOffline(file);
+
+      // Enable controls
+      btnPlay.disabled = false; btnStop.disabled = false; btnDl.disabled = false;
+      statusTxt.textContent = 'Ready';
+
+      // Auto play the newly selected audio (buffer path)
+      playBuffer();
+    });
+
+    btnPlay.addEventListener('click', ()=>{
+      if(!currentBuffer){ return; }
+      if(!ac){ ensureAC(); buildGraph(); }
+      if(ac.state === 'suspended') ac.resume();
+
+      // If playing, pause by stopping; pressing again restarts from beginning
+      if(src){
+        stopPlayback();
+        btnPlay.textContent = 'Play';
+        statusTxt.textContent = 'Pause';
+      } else {
+        playBuffer();
+      }
+    });
+
+    btnStop.addEventListener('click', ()=>{
+      stopPlayback();
+      statusTxt.textContent = 'Stop';
+    });
+
+    gainSlider.addEventListener('input', ()=>{
+  updateGain();
+  if(parseFloat(gainSlider.value) > 1 && !limiterCb.checked){
+    limiterCb.checked = true;
+    connectFlow();
+  }
+});
+
+
+    // Shortcuts
+    window.addEventListener('keydown', (e)=>{
+      if(e.code==='Space'){
+        e.preventDefault();
+        btnPlay.click();
+      }
+      if(e.key==='ArrowUp' || e.key==='ArrowDown'){
+        const step = e.key==='ArrowUp' ? 0.05 : -0.05;
+        const next = Math.max(0, Math.min(5, parseFloat(gainSlider.value) + step));
+        gainSlider.value = String(next);
+        updateGain();
+      }
+    });
+
+    btnDl.addEventListener('click', ()=>{
+      exportBoosted().catch(err=>{
+        console.error(err);
+        alert('Failed to Export: ' + err.message);
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
